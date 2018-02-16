@@ -169,7 +169,7 @@ function searchMovies(e) {
 // HANDLE GET MOVIES
 function getMovies(searchText) {
 	// Get Movies from OMDBAPI
-	axios.get('http://www.omdbapi.com/?apikey=2440ee2b&s='+searchText)
+	axios.get('https://www.omdbapi.com/?apikey=2440ee2b&s='+searchText)
 		.then((response) => {
 			let movies = response.data.Search;
 			let movieSection = document.querySelector('#movies');
@@ -209,7 +209,7 @@ function movieSelected(event, id, title, poster) {
 // HANDLE GET MOVIE SELECTED DETAILS
 function getMovie() {
 	let movieId = sessionStorage.getItem('movieId');
-	return axios.get('http://www.omdbapi.com/?apikey=2440ee2b&i='+movieId)
+	return axios.get('https://www.omdbapi.com/?apikey=2440ee2b&i='+movieId)
 }
 
 // HANDLE ADD TO FAVORITES
@@ -233,7 +233,7 @@ function addToFavorites(e) {
 // HANDLE SAVE TO FAVORITES
 function saveFavorite(favMovie) {
 	// Save movie to localhost server
-	axios.post('http://localhost:3000/favorites', favMovie)
+	axios.post('https://localhost:3000/favorites', favMovie)
 		.then((response) => {
 			// Alert Success
 			showAlert('Success! Movied added to My Favorites.', 'alert-success');
@@ -243,7 +243,7 @@ function saveFavorite(favMovie) {
 
 // HANDLE GET FAVORITES
 function getFavorites() {
-	return axios.get('http://localhost:3000/favorites')
+	return axios.get('https://localhost:3000/favorites')
 }
 
 // SHOW ALERT
