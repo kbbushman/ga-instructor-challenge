@@ -1,4 +1,5 @@
 const express = require('express');
+var cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express();
 const fs = require('file-system');
@@ -6,6 +7,9 @@ const path = require('path');
 
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Cors Middleware
+app.use(cors());
 
 // Body Parser Middleware - parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))

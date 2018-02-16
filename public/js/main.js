@@ -233,7 +233,7 @@ function addToFavorites(e) {
 // HANDLE SAVE TO FAVORITES
 function saveFavorite(favMovie) {
 	// Save movie to localhost server
-	axios.post('https://localhost:3000/favorites', favMovie)
+	axios.post('/favorites', favMovie)
 		.then((response) => {
 			// Alert Success
 			showAlert('Success! Movied added to My Favorites.', 'alert-success');
@@ -243,7 +243,7 @@ function saveFavorite(favMovie) {
 
 // HANDLE GET FAVORITES
 function getFavorites() {
-	return axios.get('https://localhost:3000/favorites')
+	return axios.get('/favorites')
 }
 
 // SHOW ALERT
